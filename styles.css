@@ -65,6 +65,7 @@ html {
   /* Background from: https://freefrontend.com/css-background-patterns/ */
 body {
     background-color: rgba(255,255,255,.95);
+    border-radius: 25px;
     display: grid;
     margin: 0 auto;
     justify-content: center;
@@ -110,7 +111,7 @@ label {
 a {
     color: white;
     text-decoration: none;
-    transition: all 1s ease-in-out;
+    transition: all .7s ease-in-out;
 }
 a:visited {
     color: white;
@@ -169,14 +170,14 @@ ul {
     background-color: rgba(160,32,240,.2);
     padding: 16px;
     border-radius: 25px;
-    transition: all 1s ease-in-out;
+    transition: all .5s ease-in-out;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     width: 175px;
     text-align: center;
 }
 #first:hover, #second:hover {
     background-color: white;
-    border: 2px solid purple;
+    border: 5px solid purple;
     color: purple;
     cursor: pointer;
 }
@@ -186,30 +187,35 @@ ul {
     background-color: rgba(160,32,240,.2);
     padding: 14px;
     border-radius: 25px;
-    transition: all 1s ease-in-out;
+    transition: all .5s ease-in-out;
     width: 250px;
     align-self: center;
 	position: relative;
 }
 .steps1a:hover {
     cursor: pointer;
+    background-color: white;
+    border: 5px solid purple;
 }
 .steps2a {
     background-color: rgba(160,32,240,.2);
     padding: 14px;
     border-radius: 25px;
-    transition: all 1s ease-in-out;
+    transition: all .7s ease-in-out;
     width: 250px;
     align-self: center;
 	position: relative;
 }
 .steps2a:hover {
     cursor: pointer;
+    background-color: white;
+    border: 5px solid purple;
 }
 /* incremental goals end */
 
 /* code for the button press */
-#personal {
+
+/* personal */
 	input {
 		position: absolute;
 		opacity: 0;
@@ -229,8 +235,8 @@ ul {
         height: 600px;
         width:  604.24px;
     }
-}
-#professional {
+
+/* professional */
 	input {
 		position: absolute;
 		opacity: 0;
@@ -250,10 +256,9 @@ ul {
 		height: 600px;
         width: 604.24px;
 	}
-}
 
-#steps1 {
-	input {
+/* Personal Input*/
+	#steps1 input {
 		position: absolute;
 		opacity: 0;
 	}
@@ -271,9 +276,8 @@ ul {
     #drop1c:checked ~ #list1c {
         height: 155px;
     }
-}
-#steps2 {
-	input {
+/* Professional Input */
+	#steps2 input {
 		position: absolute;
 		opacity: 0;
 	}
@@ -291,4 +295,3 @@ ul {
     #drop2c:checked ~ #list2c {
         height: 155px;
     }
-}
