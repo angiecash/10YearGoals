@@ -1,0 +1,294 @@
+/* #region || CSS RESET (Used for folding code) */
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* #endregion || CSS Reset*/
+html {
+    box-sizing: border-box;
+    --s: 200px; /* control the size */
+    --c1: black;
+    --c2: gray;
+    
+    --_g: 
+       var(--c2) 6%  14%,var(--c1) 16% 24%,var(--c2) 26% 34%,var(--c1) 36% 44%,
+       var(--c2) 46% 54%,var(--c1) 56% 64%,var(--c2) 66% 74%,var(--c1) 76% 84%,var(--c2) 86% 94%;
+    background:
+      radial-gradient(100% 100% at 100% 0,var(--c1) 4%,var(--_g),#0008 96%,#0000),
+      radial-gradient(100% 100% at 0 100%,#0000, #0008 4%,var(--_g),var(--c1) 96%)
+      var(--c1);
+    background-size: var(--s) var(--s);
+  }
+  /* Background from: https://freefrontend.com/css-background-patterns/ */
+body {
+    background-color: rgba(255,255,255,.95);
+    display: grid;
+    margin: 0 auto;
+    justify-content: center;
+    height: 1525px;
+    width: 1400px;
+    grid-template-rows: 50px 1445px 25px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "header header"
+    "main main"
+    "footer footer";
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+main {
+    display: grid;
+    grid-area: main;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "main1 main2";
+    gap: 20px;
+}
+h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: 60px;
+    font-weight: bold;
+    padding: 10px;
+    grid-area: header;
+    margin-top: 20px;
+}
+h2 {
+   font-size: 25px;
+    font-weight: bold;
+}
+h3 {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "Handlee", cursive;
+}
+label {
+    font-size: 20px;
+    font-family: "Handlee", cursive;
+}
+a {
+    color: white;
+    text-decoration: none;
+    transition: all 1s ease-in-out;
+}
+a:visited {
+    color: white;
+}
+main {
+    margin-top: 50px;
+}
+header {
+    grid-area: header;
+    text-align:center;
+}
+label, span {
+	cursor: pointer;
+}
+footer {
+    grid-area: footer;
+    text-align:end;
+}
+#personal {
+	margin-top: 30px;
+    grid-area: main1;
+}
+#professional {
+	margin-top: 30px;
+    grid-area: main2;
+}
+#steps1, #steps2 {
+	margin-top: 15px;
+	text-align: center;
+    display: grid;
+    grid-template-rows: 30px 30px 80px 150px 50px 150px 50px 150px;
+    justify-items: center;
+}
+p, li { 
+    padding: 10px;
+}
+ul {
+    list-style:disc;
+    list-style:inside;
+}
+
+#art, #program {
+    margin: 0 auto;
+    text-align: center;
+    transition: all 1s ease-in-out;
+    background-color: white;
+    border-radius: 30px;
+    line-height: 1.2;
+}
+
+/* Buttons for the Personal and Professional labels */
+#first, #second {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid white;
+    background-color: rgba(160,32,240,.2);
+    padding: 16px;
+    border-radius: 25px;
+    transition: all 1s ease-in-out;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    width: 175px;
+    text-align: center;
+}
+#first:hover, #second:hover {
+    background-color: white;
+    border: 2px solid purple;
+    color: purple;
+    cursor: pointer;
+}
+/* personal and professional buttons end */
+/* Buttons for the incremental goals */
+.steps1a {
+    background-color: rgba(160,32,240,.2);
+    padding: 14px;
+    border-radius: 25px;
+    transition: all 1s ease-in-out;
+    width: 250px;
+    align-self: center;
+	position: relative;
+}
+.steps1a:hover {
+    cursor: pointer;
+}
+.steps2a {
+    background-color: rgba(160,32,240,.2);
+    padding: 14px;
+    border-radius: 25px;
+    transition: all 1s ease-in-out;
+    width: 250px;
+    align-self: center;
+	position: relative;
+}
+.steps2a:hover {
+    cursor: pointer;
+}
+/* incremental goals end */
+
+/* code for the button press */
+#personal {
+	input {
+		position: absolute;
+		opacity: 0;
+	}
+	#steps1, #art {
+		height: 1px;
+		overflow: hidden;
+		transition: all .8s ease-in-out;
+	}
+    #art {
+        width: 1px;
+    }	
+	input:checked ~ #steps1 {
+		height: 700px;
+	}
+    input:checked ~ #art {
+        height: 600px;
+        width:  604.24px;
+    }
+}
+#professional {
+	input {
+		position: absolute;
+		opacity: 0;
+	}
+	#steps2, #program {
+		height: 1px;
+		overflow: hidden;
+		transition: all .8s ease-in-out;
+	}	
+    #program {
+        width: 1px;
+    }
+	input:checked ~ #steps2 {
+		height: 700px;
+	}
+    input:checked ~ #program {
+		height: 600px;
+        width: 604.24px;
+	}
+}
+
+#steps1 {
+	input {
+		position: absolute;
+		opacity: 0;
+	}
+    #list1a, #list1b, #list1c {
+		height: 1px;
+		overflow: hidden;
+		transition: all .9s ease-in-out;
+	}	
+	#drop1a:checked ~ #list1a {
+		height: 175px;
+	}
+    #drop1b:checked ~ #list1b {
+        height: 155px;
+    }
+    #drop1c:checked ~ #list1c {
+        height: 155px;
+    }
+}
+#steps2 {
+	input {
+		position: absolute;
+		opacity: 0;
+	}
+    #list2a, #list2b, #list2c {
+		height: 1px;
+		overflow: hidden;
+		transition: all .9s ease-in-out;
+	}	
+	#drop2a:checked ~ #list2a {
+		height: 175px;
+	}
+    #drop2b:checked ~ #list2b {
+        height: 155px;
+    }
+    #drop2c:checked ~ #list2c {
+        height: 155px;
+    }
+}
